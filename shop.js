@@ -24,3 +24,18 @@ Donuts.prototype.numDonuts = function (hours){
   sales.push(total);
   return sales;
 }
+//Storing all chain stores in object Chain and instantiate 5 objects
+var Chain = {
+  locations: ['Down Town', 'Capitol Hill', 'South Lake Union', 'Wedgewood', 'Ballard'],
+  avgSale: [4.5, 2, 6.33, 1.25, 3.75],
+  maxCus: [43, 37, 23, 28, 58],
+  minCus: [8, 4, 9, 2, 8]
+}
+
+function Instantiate(){ //Instantiate donut location objects
+  var donutsLocations = [0,0,0,0,0];
+  for (jj=0; jj<Chain['locations'].length; jj++){
+  donutsLocations[jj] = new Donuts(Chain.locations[jj], Chain.avgSale[jj], Chain.maxCus[jj], Chain.minCus[jj]);
+  }
+  return donutsLocations;
+}

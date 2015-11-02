@@ -12,7 +12,7 @@ Donuts.prototype.numDonuts = function (hours){
   numHours = hours[1]-hours[0];
 
   //Generate number of customers per hour based on min and max customers
-  for (ii=0; ii<=numHours; ii++){
+  for (var ii=0; ii<=numHours; ii++){
       numCustomers = Math.floor(Math.random()*(this.maxCus-this.minCus+1)+this.minCus);
 
   //Calculate the number of donuts per hour and store them in array
@@ -34,8 +34,38 @@ var Chain = {
 
 function Instantiate(){ //Instantiate donut location objects
   var donutsLocations = [0,0,0,0,0];
-  for (jj=0; jj<Chain['locations'].length; jj++){
+  for (var jj=0; jj<Chain['locations'].length; jj++){
   donutsLocations[jj] = new Donuts(Chain.locations[jj], Chain.avgSale[jj], Chain.maxCus[jj], Chain.minCus[jj]);
   }
   return donutsLocations;
 }
+function donutSimulation(hours){
+  //Instantiate donut locations and calculate the number of donuts at each location
+  var Locations = Instantiate();
+  console.log("Locations: "+Locations); //testing
+  var Input = [];
+  for (var ii = 0; ii < Locations.length; ii++){
+    Input.push(Locations[ii].numDonuts([7,18]));
+  }
+  console.log(Input);
+  //Adding rows to table and data to table
+  var myTable = document.getElementById("myTable");
+  for (var jj = 0; jj < Input.length; jj++){
+    var row = myTable.insertRow(jj+1); //Input row 1 thru 6 bc row 0 is occupied by the operating time
+    if (jj < Input.length){ //Make sure we don't get Locations[5].place, which is undefined
+    var rowHeader = Locations[jj].place;
+    }
+
+    for (var kk = 0; kk <= Input[jj].length; kk++){
+      var cell = row.insertCell(kk);
+      if (kk===0){
+        cell.innerHTML = rowHeader;
+      }
+      else{
+        cell.innerHTML = Input[jj][kk-1];
+        console.log(Input[jj][kk-1]); //Testing
+      }
+    }
+  }
+}
+donutSimulation([7,18]);

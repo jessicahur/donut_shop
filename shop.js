@@ -24,6 +24,9 @@ Donuts.prototype.numDonuts = function (hours){
   sales.push(total);
   return sales;
 }
+
+
+
 //Storing all chain stores in object Chain and instantiate 5 objects
 var Chain = {
   locations: ['Down Town', 'Capitol Hill', 'South Lake Union', 'Wedgewood', 'Ballard'],
@@ -59,7 +62,7 @@ function donutSimulation(hours){
     for (var kk = 0; kk <= Input[jj].length; kk++){
       var cell = row.insertCell(kk);
       if (kk===0){
-        cell.innerHTML = rowHeader;
+        cell.innerHTML = "<b>"+rowHeader+"<b>";
       }
       else{
         cell.innerHTML = Input[jj][kk-1];

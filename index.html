@@ -20,17 +20,15 @@
 <br />
 
 <form>
-  <fieldset id = "fieldset" >
+  <fieldset>
     <legend>Simulate a New Location</legend>
     <input id = "Loc"      type="text" placeholder="Location" ><br />
-    <input id = "Average"  type="text" placeholder="Average Sale per Hour"><br />
-    <input id = "Max"      type="text" placeholder="Max Number of Customers" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' ><br />
-    <input id = "Min"      type="text" placeholder="Min Number of Customers" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'><br />
+    <input id = "Average"  type="text" placeholder="Average Sale/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46' maxlength="3"><br />
+    <input id = "Max"      type="text" placeholder="Max Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
+    <input id = "Min"      type="text" placeholder="Min Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
     <button type="button" onclick="addNewLoc([7,18])">Simulate</button>
-
-
+    <button type="button" onclick="fixExistingLoc()">Update Location</button>
   </fieldset>
-
 </form>
 
 <script src="shop.js"> </script>

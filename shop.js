@@ -12,7 +12,7 @@ Donuts.prototype.numDonuts = function (hours){
   numHours = hours[1]-hours[0];
 
   //Generate number of customers per hour based on min and max customers
-  for (var ii=0; ii<=numHours; ii++){
+  for (var ii = 0; ii <= numHours; ii++){
       numCustomers = Math.floor(Math.random()*(this.maxCus-this.minCus+1)+this.minCus);
 
   //Calculate the number of donuts per hour and store them in array
@@ -25,7 +25,17 @@ Donuts.prototype.numDonuts = function (hours){
   return sales;
 }
 
-
+Donuts.prototype.addTableData = function(table, rowNum, hours){
+  var Sales = this.numDonuts(hours);
+  var Row = table.insertRow(rowNum);
+  var rowHeader = this.place;
+  var cell = Row.insertCell(0);
+  cell.innerHTML = "<b>"+rowHeader+"<b>";
+  for (var jj = 1; jj <= Sales.length; jj++){
+    cell = Row.insertCell(jj);
+    cell.innerHTML = Sales[jj-1];
+  }
+}
 
 //Storing all chain stores in object Chain and instantiate 5 objects
 var Chain = {
@@ -42,6 +52,17 @@ function Instantiate(){ //Instantiate donut location objects
   }
   return donutsLocations;
 }
+
+function donutSimulation(hours){
+  Locations = Instantiate ();
+  table = document.getElementById("myTable");
+  for (var kk = 0; kk < Locations.length; kk++){
+    Locations[kk].addTableData(table, kk+1, hours);
+  }
+}
+
+donutSimulation([7,18]);
+/*
 function donutSimulation(hours){
   //Instantiate donut locations and calculate the number of donuts at each location
   var Locations = Instantiate();
@@ -71,4 +92,5 @@ function donutSimulation(hours){
     }
   }
 }
-donutSimulation([7,18]);
+
+donutSimulation([7,18]); */

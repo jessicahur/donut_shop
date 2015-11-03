@@ -9,7 +9,7 @@ Donuts.prototype.numDonuts = function (hours){
   var sales = [];
   var total = 0;
 
-  numHours = hours[1]-hours[0];
+  numHours = hours[1]-hours[0]; //opens at (hours[0]-1)
 
   //Generate number of customers per hour based on min and max customers
   for (var ii = 0; ii <= numHours; ii++){
@@ -38,23 +38,27 @@ Donuts.prototype.addTableData = function(table, rowNum, hours){
 }
 
 //Storing all chain stores in object Chain and instantiate 5 objects
-var Chain = {
-  locations: ['Down Town', 'Capitol Hill', 'South Lake Union', 'Wedgewood', 'Ballard'],
-  avgSale: [4.5, 2, 6.33, 1.25, 3.75],
-  maxCus: [43, 37, 23, 28, 58],
-  minCus: [8, 4, 9, 2, 8]
-}
 
-function Instantiate(){ //Instantiate donut location objects
-  var donutsLocations = [0,0,0,0,0];
-  for (var jj=0; jj<Chain['locations'].length; jj++){
+
+function Instantiate(numShops, Chain){ //Instantiate donut location objects
+  var donutsLocations = [];
+  for (var ii=0; ii < numShops; ii++){
+    donutsLocations.push(ii);
+  }
+    for (var jj=0; jj<Chain['locations'].length; jj++){
   donutsLocations[jj] = new Donuts(Chain.locations[jj], Chain.avgSale[jj], Chain.maxCus[jj], Chain.minCus[jj]);
   }
   return donutsLocations;
 }
 
 function donutSimulation(hours){
-  Locations = Instantiate ();
+  var Chain = {
+  locations: ['Down Town', 'Capitol Hill', 'South Lake Union', 'Wedgewood', 'Ballard'],
+  avgSale: [4.5, 2, 6.33, 1.25, 3.75],
+  maxCus: [43, 37, 23, 28, 58],
+  minCus: [8, 4, 9, 2, 8]
+  }
+  Locations = Instantiate (5,Chain);
   table = document.getElementById("myTable");
   for (var kk = 0; kk < Locations.length; kk++){
     Locations[kk].addTableData(table, kk+1, hours);

@@ -52,13 +52,14 @@ function Instantiate(numShops, Chain){ //Instantiate donut location objects
   return donutsLocations;
 }
 
-function donutSimulation(hours){
-  var Chain = {
+var Chain = {
   locations: ['Down Town', 'Capitol Hill', 'South Lake Union', 'Wedgewood', 'Ballard'],
   avgSale: [4.5, 2, 6.33, 1.25, 3.75],
   maxCus: [43, 37, 23, 28, 58],
   minCus: [8, 4, 9, 2, 8]
   }
+
+function donutSimulation(hours){
   var Locations = Instantiate (5,Chain);
   var table = document.getElementById("myTable");
   for (var kk = 0; kk < Locations.length; kk++){
@@ -71,6 +72,8 @@ donutSimulation([7,18]);
 
 
 /***********Part2**********/
+
+var Shops = Instantiate(5,Chain); //Adding the existing objects inside an array
 
 
 function hoursHeading(hours){
@@ -97,13 +100,29 @@ function addNewLoc(hours){
   var minCus = parseInt(document.getElementById("Min").value);
   var maxCus = parseInt(document.getElementById("Max").value);
   var newLoc = new Donuts(location, avgSale, maxCus, minCus);
+  Shops.push(newLoc);
   var table = document.getElementById("myTable");
   newLoc.addTableData(table, -1, hours);
-
   //Make sure that avgSale is converted to num
   console.log(typeof avgSale);
 }
 
+function fixExistingLoc(){
+  var location = document.getElementById("Loc").value;
+  var avgSale = parseFloat(document.getElementById("Average").value);
+  var minCus = parseInt(document.getElementById("Min").value);
+  var maxCus = parseInt(document.getElementById("Max").value);
+  //Check if the location entered match the location already on the table
+  for (ii=0; ii<Shops.length; ii++){
+    if (location === Shops[ii].place){
+      Shop[ii].avgSale = avgSale;
+      Shop[ii].minCus = minCus;
+      Shop[ii].maxCus = maxCus;
+    }
+    break;
+
+  }
+}
 
 
 /*

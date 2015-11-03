@@ -42,6 +42,7 @@ function Instantiate(){ //Instantiate donut location objects
   }
   return donutsLocations;
 }
+
 function donutSimulation(hours){
   //Instantiate donut locations and calculate the number of donuts at each location
   var Locations = Instantiate();
@@ -71,4 +72,5 @@ function donutSimulation(hours){
     }
   }
 }
+
 donutSimulation([7,18]);

@@ -1,0 +1,37 @@
+
+body{
+  background-color: #ffebef;
+  background-image: url("pinkdonuts.jpg");
+  background-position: center bottom;
+}
+h1{
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-family: "Monotype Corsiva", cursive;
+  font-size: 3em;
+  text-shadow: 1px 1px 0px #666;
+}
+table{
+  margin: auto;
+  border-collapse: collapse;
+  border: solid 1px black;
+}
+th{
+  padding: 7px 10px 7px 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+td{
+  border-bottom: solid 1px silver;
+  padding-left: 5px;
+  text-align: center;
+}
+
+tr.hours{
+  background-color: #ffd1dc;
+  border-bottom: solid 1px black;
+}
+/*td{
+  border-left: solid 1px silver;
+  border-right: solid 1px silver;
+} */

@@ -58,26 +58,25 @@ var Chain = {
   maxCus: [43, 37, 23, 28, 58],
   minCus: [8, 4, 9, 2, 8]
   }
+var Locations = Instantiate (5,Chain);
 
-function donutSimulation(hours){
-  var Locations = Instantiate (5,Chain);
+function donutSimulation(Shops, hours){
   var table = document.getElementById("myTable");
-  for (var kk = 0; kk < Locations.length; kk++){
+  for (var kk = 0; kk < Shops.length; kk++){
     Locations[kk].addTableData(table, kk+1, hours);
   }
 }
 
 hoursHeading([7,18]);
-donutSimulation([7,18]);
+donutSimulation(Locations, [7,18]);
 
 
 /***********Part2**********/
 
-var Shops = Instantiate(5,Chain); //Adding the existing objects inside an array
-
 
 function hoursHeading(hours){
   var row = document.getElementById("hoursHeading")
+  console.log(row);
   for (ii = hours[0]+1; ii <= hours[1]; ii++){
       var cell = row.insertCell(ii-hours[0]);
       if (ii===12){
@@ -100,7 +99,7 @@ function addNewLoc(hours){
   var minCus = parseInt(document.getElementById("Min").value);
   var maxCus = parseInt(document.getElementById("Max").value);
   var newLoc = new Donuts(location, avgSale, maxCus, minCus);
-  Shops.push(newLoc);
+  Locations.push(newLoc);
   var table = document.getElementById("myTable");
   newLoc.addTableData(table, -1, hours);
   //Make sure that avgSale is converted to num
@@ -113,15 +112,18 @@ function fixExistingLoc(){
   var minCus = parseInt(document.getElementById("Min").value);
   var maxCus = parseInt(document.getElementById("Max").value);
   //Check if the location entered match the location already on the table
-  for (ii=0; ii<Shops.length; ii++){
-    if (location === Shops[ii].place){
-      Shop[ii].avgSale = avgSale;
-      Shop[ii].minCus = minCus;
-      Shop[ii].maxCus = maxCus;
+  for (ii=0; ii<Locations.length; ii++){
+    if (location === Locations[ii].place){
+      Locations[ii].avgSale = avgSale;
+      Locations[ii].minCus = minCus;
+      Locations[ii].maxCus = maxCus;
     }
     break;
-
   }
+  var myTable = document.getElementById("myTable");
+  myTable.innerHTML = "<table><tr id='hoursHeading' class='hours'><th></th></tr><tr></tr></table>";
+  hoursHeading([7,18]);
+  donutSimulation(Locations,[7,18]);
 }
 
 

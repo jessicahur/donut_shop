@@ -8,22 +8,8 @@
 <h1>Top Pot Donuts Simulation</h1>
 <br />
 <table id="myTable">
-<tr class="hours">
+<tr id = "hoursHeading" class="hours">
   <th></th>
-  <th scope="col" >7AM</th>
-  <th scope="col" >8AM</th>
-  <th scope="col" >9AM</th>
-  <th scope="col" >10AM</th>
-  <th scope="col" >11AM</th>
-  <th scope="col" >12PM</th>
-  <th scope="col" >1PM</th>
-  <th scope="col" >2PM</th>
-  <th scope="col" >3PM</th>
-  <th scope="col" >4PM</th>
-  <th scope="col" >5PM</th>
-  <th scope="col" >6PM</th>
-  <th scope="col">Total</th>
-
 </tr>
 
 <tr>
@@ -38,9 +24,9 @@
     <legend>Simulate a New Location</legend>
     <input id = "Loc"      type="text" placeholder="Location" ><br />
     <input id = "Average"  type="text" placeholder="Average Sale per Hour"><br />
-    <input id = "Max"      type="text" placeholder="Max Number of Customers" ><br />
-    <input id = "Min"      type="text" placeholder="Min Number of Customers" ><br />
-    <button type="button" onclick="addNewLoc()">Simulate</button>
+    <input id = "Max"      type="text" placeholder="Max Number of Customers" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' ><br />
+    <input id = "Min"      type="text" placeholder="Min Number of Customers" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'><br />
+    <button type="button" onclick="addNewLoc([7,18])">Simulate</button>
 
 
   </fieldset>

@@ -16,13 +16,13 @@ table{
   border-collapse: collapse;
   border: solid 1px black;
 }
-th{
+tr#hoursHeading{
   padding: 7px 10px 7px 10px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 td{
-  border-bottom: solid 1px silver;
+  border-bottom: solid 1px black;
   padding-left: 5px;
   text-align: center;
 }

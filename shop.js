@@ -12,12 +12,13 @@ Donuts.prototype.numDonuts = function (hours){
   numHours = hours[1]-hours[0]; //opens at (hours[0]-1)
 
   //Generate number of customers per hour based on min and max customers
-  for (var ii = 0; ii <= numHours; ii++){
-      numCustomers = Math.floor(Math.random()*(this.maxCus-this.minCus+1)+this.minCus);
-
+  for (var ii = 0; ii < numHours; ii++){
+      var numCustomers = Math.floor(Math.random()*(this.maxCus-this.minCus+1))+this.minCus;
+      //Debug: console.log("numCustomers is "+numCustomers);
   //Calculate the number of donuts per hour and store them in array
   // testing if numCustomers was correctly installed: console.log(numCustomers);
-    donutsPerHr = Math.floor(numCustomers*this.avgSale);
+    var donutsPerHr = Math.ceil(numCustomers*this.avgSale);
+    //Debug: console.log("donuts per hour is "+donutsPerHr); //Debug
     sales.push(donutsPerHr);
     total+=donutsPerHr;
   }
@@ -65,23 +66,44 @@ function donutSimulation(hours){
   }
 }
 
+hoursHeading([7,18]);
 donutSimulation([7,18]);
 
 
 /***********Part2**********/
-var hours = [7,18];
 
 
+function hoursHeading(hours){
+  var row = document.getElementById("hoursHeading")
+  for (ii = hours[0]+1; ii <= hours[1]; ii++){
+      var cell = row.insertCell(ii-hours[0]);
+      if (ii===12){
+        cell.innerHTML = ii+"PM";
+      }
+      else if (ii > 11){
+        cell.innerHTML = (ii-12)+"PM";
+      }
+      else{
+        cell.innerHTML = ii+"AM";
+      }
+  }
+  row.insertCell(-1).innerHTML = "<th scope='col'> Total </th>";
+
+}
 
 function addNewLoc(hours){
   var location = document.getElementById("Loc").value;
-  var avgSale = document.getElementById("Average").value;
-  var minCus = document.getElementById("Min").value;
-  var maxCus = document.getElementById("Max").value;
+  var avgSale = parseFloat(document.getElementById("Average").value);
+  var minCus = parseInt(document.getElementById("Min").value);
+  var maxCus = parseInt(document.getElementById("Max").value);
   var newLoc = new Donuts(location, avgSale, maxCus, minCus);
   var table = document.getElementById("myTable");
   newLoc.addTableData(table, -1, hours);
+
+  //Make sure that avgSale is converted to num
+  console.log(typeof avgSale);
 }
+
 
 
 /*

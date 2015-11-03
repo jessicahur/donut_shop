@@ -17,7 +17,7 @@ Donuts.prototype.numDonuts = function (hours){
 
   //Calculate the number of donuts per hour and store them in array
   // testing if numCustomers was correctly installed: console.log(numCustomers);
-    donutsPerHr = Math.round(numCustomers*this.avgSale);
+    donutsPerHr = Math.floor(numCustomers*this.avgSale);
     sales.push(donutsPerHr);
     total+=donutsPerHr;
   }

@@ -58,14 +58,32 @@ function donutSimulation(hours){
   maxCus: [43, 37, 23, 28, 58],
   minCus: [8, 4, 9, 2, 8]
   }
-  Locations = Instantiate (5,Chain);
-  table = document.getElementById("myTable");
+  var Locations = Instantiate (5,Chain);
+  var table = document.getElementById("myTable");
   for (var kk = 0; kk < Locations.length; kk++){
     Locations[kk].addTableData(table, kk+1, hours);
   }
 }
 
 donutSimulation([7,18]);
+
+
+/***********Part2**********/
+var hours = [7,18];
+
+
+
+function addNewLoc(hours){
+  var location = document.getElementById("Loc").value;
+  var avgSale = document.getElementById("Average").value;
+  var minCus = document.getElementById("Min").value;
+  var maxCus = document.getElementById("Max").value;
+  var newLoc = new Donuts(location, avgSale, maxCus, minCus);
+  var table = document.getElementById("myTable");
+  newLoc.addTableData(table, -1, hours);
+}
+
+
 /*
 function donutSimulation(hours){
   //Instantiate donut locations and calculate the number of donuts at each location

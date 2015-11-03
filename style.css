@@ -31,6 +31,16 @@ tr.hours{
   background-color: #ffd1dc;
   border-bottom: solid 1px black;
 }
+
+#fieldset{
+  background-color: white;
+  max-width: 200px;
+  margin: auto;
+}
+
+input.fieldset{
+  margin: auto;
+}
 /*td{
   border-left: solid 1px silver;
   border-right: solid 1px silver;

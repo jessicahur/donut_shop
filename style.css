@@ -45,8 +45,13 @@ fieldset{
   margin: auto;
 }
 
-input{
+input:focus{
   margin: auto;
+  background-color: silver;
+}
+
+button:active{
+  background-color: #DDD2FF;
 }
 /*td{
   border-left: solid 1px silver;

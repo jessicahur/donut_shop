@@ -16,13 +16,20 @@ table{
   border-collapse: collapse;
   border: solid 1px black;
 }
-th{
-  padding: 7px 10px 7px 10px;
+
+legend{
+  margin: auto;
+}
+
+tr#hoursHeading{
+  padding: 7px 20px 7px 20px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  font-weight: bold;
 }
+
 td{
-  border-bottom: solid 1px silver;
+  border-bottom: solid 1px black;
   padding-left: 5px;
   text-align: center;
 }
@@ -30,6 +37,21 @@ td{
 tr.hours{
   background-color: #ffd1dc;
   border-bottom: solid 1px black;
+}
+
+fieldset{
+  background-color: white;
+  max-width: 200px;
+  margin: auto;
+}
+
+input:focus{
+  margin: auto;
+  background-color: #FFFDD3;
+}
+
+button:active{
+  background-color: #DDD2FF;
 }
 /*td{
   border-left: solid 1px silver;

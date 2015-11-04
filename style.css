@@ -1,23 +1,23 @@
 
 body{
-  background-color: #b8ae9c;
+  background-color: #feebcb;
+  max-width: 100%;
+  max-height: 80%;
+  margin: auto;
+  /*padding-bottom: 5%;*/
 }
 
-h1{
-  margin: 0px;
+header{
+  margin: none;
   background-color: #fff;
-  padding: 1%;
+  padding: 0.5%;
   text-align: center;
   letter-spacing: 0.1em;
   font-family: 'Abril Fatface', cursive;
-  font-size: 3em;
+  font-size: 2em;
   text-shadow: 1px 1px 0px #666;
 }
 
-div#main{
-  background-color: #595241;
-  padding: 5%;
-}
 table{
   font-family: 'Abril Fatface', cursive;
   background-color:#accfcc;

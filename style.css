@@ -47,7 +47,7 @@ fieldset{
 
 input:focus{
   margin: auto;
-  background-color: silver;
+  background-color: #FFFDD3;
 }
 
 button:active{

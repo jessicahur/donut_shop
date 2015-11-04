@@ -1,21 +1,24 @@
 
 body{
   background-color: #feebcb;
-  max-width: 100%;
-  max-height: 80%;
   margin: auto;
-  /*padding-bottom: 5%;*/
 }
 
 header{
-  margin: none;
-  background-color: #fff;
+  background-image: url("tiles.jpeg");
+  background-repeat: repeat;
   padding: 0.5%;
   text-align: center;
   letter-spacing: 0.1em;
   font-family: 'Abril Fatface', cursive;
-  font-size: 2em;
-  text-shadow: 1px 1px 0px #666;
+  font-size: 1.5em;
+  text-shadow: 1px 1.5px 0px #666;
+  color: #daf3da;
+}
+
+h2{
+  font-size: 0.75em;
+  margin: none;
 }
 
 table{

@@ -26,6 +26,8 @@ Donuts.prototype.numDonuts = function (hours){
   return sales;
 }
 
+
+
 Donuts.prototype.addTableData = function(table, rowNum, hours){
   var Sales = this.numDonuts(hours);
   var Row = table.insertRow(rowNum);
@@ -75,8 +77,7 @@ donutSimulation(Locations, [7,18]);
 
 
 function hoursHeading(hours){
-  var row = document.getElementById("hoursHeading")
-  console.log(row);
+  var row = document.getElementById("hoursHeading");
   for (ii = hours[0]+1; ii <= hours[1]; ii++){
       var cell = row.insertCell(ii-hours[0]);
       if (ii===12){
@@ -103,7 +104,7 @@ function addNewLoc(hours){
   var table = document.getElementById("myTable");
   newLoc.addTableData(table, -1, hours);
   //Make sure that avgSale is converted to num
-  console.log(typeof avgSale);
+  //console.log(typeof avgSale);
 }
 
 function fixExistingLoc(){
@@ -112,19 +113,21 @@ function fixExistingLoc(){
   var minCus = parseInt(document.getElementById("Min").value);
   var maxCus = parseInt(document.getElementById("Max").value);
   //Check if the location entered match the location already on the table
-  for (ii=0; ii<Locations.length; ii++){
-    if (location === Locations[ii].place){
+  for (var ii=0; ii<Locations.length; ii++){
+    if (location == Locations[ii].place){
       Locations[ii].avgSale = avgSale;
       Locations[ii].minCus = minCus;
       Locations[ii].maxCus = maxCus;
+      break;
     }
-    break;
+
   }
   var myTable = document.getElementById("myTable");
   myTable.innerHTML = "<table><tr id='hoursHeading' class='hours'><th></th></tr><tr></tr></table>";
   hoursHeading([7,18]);
   donutSimulation(Locations,[7,18]);
 }
+
 
 
 /*

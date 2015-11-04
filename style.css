@@ -1,18 +1,27 @@
 
 body{
-  background-color: #ffebef;
-  background-image: url("pinkdonuts.jpg");
-  background-position: center bottom;
+  background-color: #b8ae9c;
 }
+
 h1{
+  margin: 0px;
+  background-color: #fff;
+  padding: 1%;
   text-align: center;
   letter-spacing: 0.1em;
-  font-family: "Monotype Corsiva", cursive;
+  font-family: 'Abril Fatface', cursive;
   font-size: 3em;
   text-shadow: 1px 1px 0px #666;
 }
+
+div#main{
+  background-color: #595241;
+  padding: 5%;
+}
 table{
-  margin: auto;
+  font-family: 'Abril Fatface', cursive;
+  background-color:#accfcc;
+  margin: 2em auto;
   border-collapse: collapse;
   border: solid 1px black;
 }
@@ -22,30 +31,43 @@ legend{
 }
 
 tr#hoursHeading{
+  font-family: 'Shadows Into Light', cursive;
+  background-color: #fff;
   padding: 7px 20px 7px 20px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: solid 1px black;
 }
 
 td{
+  padding: 1em;
   border-bottom: solid 1px black;
   padding-left: 5px;
   text-align: center;
 }
 
-tr.hours{
-  background-color: #ffd1dc;
-  border-bottom: solid 1px black;
+
+form{
+  background-color: white;
+  max-width: 25%;
+  margin: 3em auto;
 }
 
 fieldset{
-  background-color: white;
-  max-width: 200px;
-  margin: auto;
+  border: none;
+}
+
+legend{
+  font-weight: bold;
+  font-size: 1.05em;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
 }
 
 input:focus{
+  max-width: 90%;
   margin: auto;
   background-color: #FFFDD3;
 }

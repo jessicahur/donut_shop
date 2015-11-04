@@ -9,17 +9,17 @@ Donuts.prototype.numDonuts = function (hours){
   var sales = [];
   var total = 0;
 
-  numHours = hours[1]-hours[0]; //opens at (hours[0]-1)
+  numHours = hours[1]-hours[0]; //opens at (hours[0]-hour[1])
 
   //Generate number of customers per hour based on min and max customers
   for (var ii = 0; ii < numHours; ii++){
-      var numCustomers = Math.floor(Math.random()*(this.maxCus-this.minCus+1))+this.minCus;
+    var numCustomers = Math.floor(Math.random()*(this.maxCus-this.minCus+1))+this.minCus;
       //Debug: console.log("numCustomers is "+numCustomers);
   //Calculate the number of donuts per hour and store them in array
   // testing if numCustomers was correctly installed: console.log(numCustomers);
     var donutsPerHr = Math.ceil(numCustomers*this.avgSale);
     //Debug: console.log("donuts per hour is "+donutsPerHr); //Debug
-    sales.push(donutsPerHr);
+    sales.push(donutsPerHr);//put total in the end of the sales array
     total+=donutsPerHr;
   }
   sales.push(total);
@@ -48,7 +48,7 @@ function Instantiate(numShops, Chain){ //Instantiate donut location objects
   for (var ii=0; ii < numShops; ii++){
     donutsLocations.push(ii);
   }
-    for (var jj=0; jj<Chain['locations'].length; jj++){
+  for (var jj=0; jj<Chain['locations'].length; jj++){
   donutsLocations[jj] = new Donuts(Chain.locations[jj], Chain.avgSale[jj], Chain.maxCus[jj], Chain.minCus[jj]);
   }
   return donutsLocations;
@@ -125,7 +125,7 @@ function fixExistingLoc(){
 
   }
   var myTable = document.getElementById("myTable");
-  myTable.innerHTML = "<table><tr id='hoursHeading' class='hours'><th></th></tr><tr></tr></table>";
+  myTable.innerHTML = "<table><tr id='hoursHeading' class='hours'><th></th></tr></table>";
   hoursHeading([7,18]);
   donutSimulation(Locations,[7,18]);
 }

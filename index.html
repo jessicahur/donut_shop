@@ -3,34 +3,36 @@
 <head>
   <title>Donuts Model</title>
   <link rel="stylesheet" href= "style.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<h1>Top Pot Donuts Simulation</h1>
-<br />
-<table id="myTable">
-<tr id = "hoursHeading" class="hours">
-  <th></th>
-</tr>
+<div id="main">
+  <header>
+    <h1>Top Pot Donuts Simulation</h1>
+  </header>
 
-<tr>
-</tr>
+  <table id="myTable">
+    <tr id = "hoursHeading" class="hours">
+     <th></th>
+    </tr>
+  </table>
 
-</table>
+  <br />
 
-<br />
-
-<form>
-  <fieldset>
-    <legend>Simulate a New Location</legend>
-    <input id = "Loc"      type="text" placeholder="Location" ><br />
-    <input id = "Average"  type="text" placeholder="Average Sale/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46' maxlength="3"><br />
-    <input id = "Max"      type="text" placeholder="Max Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
-    <input id = "Min"      type="text" placeholder="Min Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
-    <button type="button" onclick="addNewLoc([7,18])">Simulate</button>
-    <button type="button" onclick="fixExistingLoc()">Update Location</button>
-  </fieldset>
-</form>
-
+  <form>
+    <fieldset>
+      <legend>See how our other shops are doing!</legend>
+      <input id = "Loc"      type="text" placeholder="Location" ><br />
+      <input id = "Average"  type="text" placeholder="Average Sale/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46' maxlength="3"><br />
+      <input id = "Max"      type="text" placeholder="Max Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
+      <input id = "Min"      type="text" placeholder="Min Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
+      <button type="button" onclick="addNewLoc([7,18])">Simulate</button>
+      <button type="button" onclick="fixExistingLoc()">Update Location</button>
+    </fieldset>
+  </form>
+</div>
 <script src="shop.js"> </script>
 </body>
 </html>

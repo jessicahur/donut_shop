@@ -99,10 +99,12 @@ function addNewLoc(hours){
   var avgSale = parseFloat(document.getElementById("Average").value);
   var minCus = parseInt(document.getElementById("Min").value);
   var maxCus = parseInt(document.getElementById("Max").value);
-  var newLoc = new Donuts(location, avgSale, maxCus, minCus);
-  Locations.push(newLoc);
-  var table = document.getElementById("myTable");
-  newLoc.addTableData(table, -1, hours);
+  if (location!=="" && avgSale!=NaN && minCus!=NaN && maxCus!=NaN){
+    var newLoc = new Donuts(location, avgSale, maxCus, minCus);
+    Locations.push(newLoc);
+    var table = document.getElementById("myTable");
+    newLoc.addTableData(table, -1, hours);
+  }
   //Make sure that avgSale is converted to num
   //console.log(typeof avgSale);
 }

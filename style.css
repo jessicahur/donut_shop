@@ -5,6 +5,7 @@ body{
   font-family: font-family: 'Indie Flower', cursive;
 }
 
+/************* Header styling*************/
 header{
   background-image: url("tiles.jpeg");
   background-repeat: repeat;
@@ -40,10 +41,12 @@ a.nav:hover{
   background-color: #A4AD8C;
 }
 
+
+/************* Body Styling*********/
 div.sections{
   margin: 50px auto;
   height: 232px;
-  width: 60%;
+  width: 750px;  /*setting fixed pixel well eliminate the text flowing out of BG*/
   border-radius: 10px;
 }
 

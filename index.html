@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Donuts Model</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href= "style.css"/>
   <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
@@ -10,9 +11,47 @@
 <body>
 
   <header>
-    <h1>Top Pot Donuts</h1>
-    <h2>1234 Dreamy Lane, Sugar City, CA 95205</h2>
+    <h1 class= "nav">Top Pot Donuts</h1>
+    <h2 class= "nav">Where donuts are made with TLC</h2>
+    <nav>
+      <ul>
+        <li ><a href="index.html" class="nav">Home</a> </li>
+        <li ><a href="index.html" class="nav">About Us</a></li>
+        <li ><a href="index.html" class="nav">Menu</a></li>
+        <li ><a href="index.html" class="nav">Events</a></li>
+        <li ><a href="index.html" class="nav">Contact</a></li>
+      </ul>
+    </nav>
   </header>
+
+   <div class="sections">
+
+    <img class="align" src="pastel2500x332.jpeg"  width="200px" height="200px">
+
+    <div class="text" id="intro">
+      <h3 class ="inText">Shortly About Us</h3>
+      <p>Pellentesque commodo tellus vel risus tristique fermentum. Proin ut mauris elit. Sed feugiat justo dui, nec fringilla nulla aliquet sit amet. Aenean iaculis risus non ligula hendrerit efficitur. Cras lobortis tortor diam, et lobortis augue commodo at. Sed sit amet dui ut ex sodales auctor. Praesent ut justo in dolor hendrerit efficitur. Etiam vel condimentum sem. Aenean condimentum, libero sit amet suscipit vestibulum, odio ipsum suscipit lectus, id ornare risus magna sit amet tortor.</p>
+    </div>
+  </div>
+
+  <div class="sections" id="special">
+    <img class="align" src="donutsCantResist.jpeg"  width="200px" height="200px">
+    <div class="text">
+      <h3 class ="inText">The specials you can't resist!</h3>
+      <p>Donec ac ligula non neque vehicula euismod. Quisque lacus neque, mollis quis sodales vitae, pharetra eu risus. Praesent nec laoreet purus, et tincidunt urna. Vestibulum facilisis commodo nibh, a congue justo elementum ac. Quisque eu scelerisque tellus, condimentum auctor diam. Donec viverra vestibulum ante. Etiam dolor magna, vehicula id leo sed, dictum interdum massa. Quisque lobortis purus eget nunc placerat venenatis. Nunc vitae magna imperdiet, interdum lectus vel, placerat turpis. Donec posuere rhoncus felis vel hendrerit. Duis velit lectus, semper vel consequat sit amet, dignissim sed elit. Duis et tortor at enim tristique.</p>
+    </div>
+  </div>
+
+<div class="sections" id="wedding">
+    <img class="align" src="donutwedding610x915.jpeg"  width="200px" height="200px">
+    <div class="text">
+      <h3 class ="inText">We Cater!</h3>
+      <p>Mauris accumsan odio et eros auctor laoreet. Integer auctor nibh et facilisis interdum. Proin faucibus nisl placerat tristique fermentum. Maecenas quis elit facilisis augue efficitur volutpat nec a lorem. Phasellus at massa luctus, lobortis erat nec, auctor arcu. Curabitur ultrices maximus molestie. Suspendisse in consectetur enim, sit amet hendrerit purus. Suspendisse varius ligula diam, ac aliquam leo semper sit amet. Nam sed felis ipsum. Donec volutpat sem ligula, quis consequat ligula venenatis nec. Suspendisse ullamcorper magna id elementum tincidunt. .</p>
+    </div>
+  </div>
+
+
+  <h2 id="franchise">Interested in our franchise program but not sure what the sales is? Check out the simulation below!</h2>
 
   <table id="myTable">
     <tr id = "hoursHeading" class="hours">
@@ -24,12 +63,12 @@
 
   <form>
     <fieldset>
-      <legend>See how our other shops are doing!</legend>
+      <!--legend>See how our other shops are doing!</legend-->
       <input id = "Loc"      type="text" placeholder="Location" ><br />
       <input id = "Average"  type="text" placeholder="Average Sale/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46' maxlength="3"><br />
       <input id = "Max"      type="text" placeholder="Max Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
       <input id = "Min"      type="text" placeholder="Min Customers/Hr" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="2"><br />
-      <button type="button" onclick="addNewLoc([7,18])">Simulate</button>
+      <button type="button" onclick="addNewLoc([7,18])">Add New Location</button>
       <button type="button" onclick="fixExistingLoc()">Update Location</button>
     </fieldset>
   </form>

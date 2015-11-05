@@ -1,27 +1,90 @@
 
 body{
-  background-color: #b8ae9c;
+  background-color: #feebcb;
+  margin: auto;
+  font-family: font-family: 'Indie Flower', cursive;
 }
 
-h1{
-  margin: 0px;
-  background-color: #fff;
-  padding: 1%;
+header{
+  background-image: url("tiles.jpeg");
+  background-repeat: repeat;
+  padding: 0.5% 0%;
   text-align: center;
   letter-spacing: 0.1em;
   font-family: 'Abril Fatface', cursive;
-  font-size: 3em;
-  text-shadow: 1px 1px 0px #666;
+  font-size: 1.5em;
+  text-shadow: 1px 1.5px 0px #666;
+  color: #daf3da;
 }
 
-div#main{
-  background-color: #595241;
-  padding: 5%;
+h2.nav{
+  font-size: 1em;
+  margin: none;
 }
+
+nav{
+  background-color: #F1FFCE;
+  width: 100%;
+  margin: none;
+}
+
+li{
+  display: inline;
+  padding: 1em;
+}
+a.nav{
+  color: #feced7;
+  text-decoration: none;
+}
+a.nav:hover{
+  background-color: #A4AD8C;
+}
+
+div.sections{
+  margin: 50px auto;
+  height: 232px;
+  width: 60%;
+  border-radius: 10px;
+}
+
+div#intro{
+  background-color: #DDEFC8;
+}
+
+div#special{
+  background-color: #feced7;
+}
+
+div#wedding{
+  background-color: #cecce9;
+}
+
+img{
+  float: left;
+  margin: auto;
+  padding: 1em;
+}
+
+div.text{
+  height: 200px;
+  margin: auto;
+  padding: 1em;
+}
+
+h3.inText{
+  margin: auto;
+}
+
+h2#franchise{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
 table{
   font-family: 'Abril Fatface', cursive;
   background-color:#accfcc;
-  margin: 2em auto;
+  margin: 50px auto 20px auto;
   border-collapse: collapse;
   border: solid 1px black;
 }
@@ -50,20 +113,23 @@ td{
 
 
 form{
-  background-color: white;
-  max-width: 25%;
-  margin: 3em auto;
+  width: 25%;
+  margin: 0px auto 50px auto;
 }
 
 fieldset{
   border: none;
 }
 
-legend{
+/*legend{
   font-weight: bold;
   font-size: 1.05em;
   font-family: 'Indie Flower', cursive;
   text-align: center;
+}*/
+
+input{
+  width: 98%;
 }
 
 input:focus{
@@ -74,6 +140,8 @@ input:focus{
 
 button:active{
   background-color: #DDD2FF;
+  width: 30%;
+  margin: auto;
 }
 /*td{
   border-left: solid 1px silver;

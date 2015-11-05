@@ -44,7 +44,8 @@ a.nav:hover{
 
 /************* Body Styling*********/
 div.sections{
-  margin: 50px auto;
+  font-family: 'Indie Flower', cursive;
+  margin: 40px auto;
   height: 232px;
   width: 750px;  /*setting fixed pixel well eliminate the text flowing out of BG*/
   border-radius: 10px;
@@ -78,7 +79,14 @@ h3.inText{
   margin: auto;
 }
 
+p.text{
+  margin: 0px;
+}
+
 h2#franchise{
+  width: 950px;
+  font-family: 'Indie Flower', cursive;
+  color: #FE93D7;
   width: 60%;
   margin: auto;
   text-align: center;
@@ -146,7 +154,13 @@ button:active{
   width: 30%;
   margin: auto;
 }
-/*td{
-  border-left: solid 1px silver;
-  border-right: solid 1px silver;
-} */
+
+/****** Special styling for smaller screen******/
+@media screen and (min-width: 480px) {
+
+  nav{
+
+  }
+
+}
+

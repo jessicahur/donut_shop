@@ -2,11 +2,14 @@
 body{
   background-color: #feebcb;
   margin: auto;
-  font-family: font-family: 'Indie Flower', cursive;
 }
 
+/************* Header styling*************/
 header{
-  background-image: url("tiles.jpeg");
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-image: url("600x398.jpg");
   background-repeat: repeat;
   padding: 0.5% 0%;
   text-align: center;
@@ -14,7 +17,7 @@ header{
   font-family: 'Abril Fatface', cursive;
   font-size: 1.5em;
   text-shadow: 1px 1.5px 0px #666;
-  color: #daf3da;
+  color: #FE93D7;
 }
 
 h2.nav{
@@ -25,29 +28,39 @@ h2.nav{
 nav{
   background-color: #F1FFCE;
   width: 100%;
-  margin: none;
+  margin: 1em auto;
 }
 
-li{
-  display: inline;
-  padding: 1em;
-}
+
 a.nav{
+  background-color: #F1FFCE;
+  margin: auto;
+  display: inline-block;
+  padding: 0.25em;
   color: #feced7;
   text-decoration: none;
 }
+
 a.nav:hover{
   background-color: #A4AD8C;
 }
 
+
+/************* Body Styling*********/
 div.sections{
-  margin: 50px auto;
+  font-family: 'Indie Flower', cursive;
+  margin: 40px auto;
   height: 232px;
-  width: 60%;
+  width: 750px;  /*setting fixed pixel well eliminate the text flowing out of BG*/
   border-radius: 10px;
+  /*@media screen and (min-width: 550px){
+    height: 5%;
+    width: 20%;
+  }*/
 }
 
 div#intro{
+  margin-top: 300px;
   background-color: #DDEFC8;
 }
 
@@ -66,7 +79,7 @@ img{
 }
 
 div.text{
-  height: 200px;
+  /*height: 200px;*/
   margin: auto;
   padding: 1em;
 }
@@ -75,8 +88,14 @@ h3.inText{
   margin: auto;
 }
 
+p.text{
+  margin: 0px;
+}
+
 h2#franchise{
-  width: 60%;
+  width: 950px;
+  font-family: 'Indie Flower', cursive;
+  color: #FE93D7;
   margin: auto;
   text-align: center;
 }
@@ -121,19 +140,11 @@ fieldset{
   border: none;
 }
 
-/*legend{
-  font-weight: bold;
-  font-size: 1.05em;
-  font-family: 'Indie Flower', cursive;
-  text-align: center;
-}*/
-
 input{
   width: 98%;
 }
 
 input:focus{
-  max-width: 90%;
   margin: auto;
   background-color: #FFFDD3;
 }
@@ -143,7 +154,117 @@ button:active{
   width: 30%;
   margin: auto;
 }
-/*td{
-  border-left: solid 1px silver;
-  border-right: solid 1px silver;
-} */
+
+a.BackToTop{
+  position: absolute;
+  left: 40%;
+  text-decoration: none;
+  font-family: 'Indie Flower', cursive;
+  color: Brown;
+}
+
+/********************** Special styling for smaller screen*****/
+/***************************************************************/
+
+@media screen and (max-width: 550px) {
+
+  body{
+    background-color: #feebcb;
+    margin: auto;
+  }
+  /****Header*******/
+  header{
+    background-image: url("tiles.jpeg");
+    background-repeat: repeat;
+    padding: 0.1% 0%;
+    text-align: center;
+    /*letter-spacing: 0.1em;*/
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1em;
+    text-shadow: 1px 1.5px 0px #666;
+    color: #daf3da;
+  }
+
+  h1.nav{
+    margin: 0px;
+  }
+  h2.nav{
+    font-size: 0.75em;
+    margin: none;
+  }
+
+  nav{
+    background-color: #F1FFCE;
+    width: 100%;
+    margin: auto;
+  }
+
+  a.nav{
+    background-color: #F1FFCE;
+    margin: auto;
+    display: inline-block;
+    padding: 0.1em;
+    color: #feced7;
+    text-decoration: none;
+  }
+  /********Body********/
+  div.sections{
+    display: none;
+  }
+
+  h2#franchise{
+    font-size: 0.75em;
+    width: 80%;
+    font-family: 'Indie Flower', cursive;
+    color: #FE93D7;
+    margin: 2em auto 0px auto;
+    text-align: center;
+  }
+
+  table{
+    font-size: 0.005em;
+    font-family: "Helvetica", 'san-serif';
+    background-color:#accfcc;
+    margin: 20px auto 20px auto;
+    border-collapse: collapse;
+    border: solid 1px black;
+  }
+
+  tr#hoursHeading{
+    font-family: "Helvetica", 'san-serif';
+    background-color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.005em;
+    border-bottom: solid 1px black;
+  }
+
+  td{
+    border-bottom: solid 1px black;
+    text-align: center;
+  }
+
+  form{
+    width: 50%;
+    margin: auto;
+  }
+
+  fieldset{
+    border: none;
+  }
+
+  input{
+    width: 98%;
+  }
+
+  input:focus{
+    margin: auto;
+    background-color: #FFFDD3;
+  }
+
+  button:active{
+    background-color: #DDD2FF;
+    width: 30%;
+    margin: auto;
+  }
+}

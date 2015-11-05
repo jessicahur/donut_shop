@@ -1,4 +1,4 @@
-
+@media (min-width: 550px){
 body{
   background-color: #feebcb;
   margin: auto;
@@ -50,9 +50,10 @@ div.sections{
   height: 232px;
   width: 750px;  /*setting fixed pixel well eliminate the text flowing out of BG*/
   border-radius: 10px;
-  @media screen and (min-width: 550px) {
-    width: 100%;
-  }
+  /*@media screen and (min-width: 550px){
+    height: 5%;
+    width: 20%;
+  }*/
 }
 
 div#intro{
@@ -74,7 +75,7 @@ img{
 }
 
 div.text{
-  height: 200px;
+  /*height: 200px;*/
   margin: auto;
   padding: 1em;
 }
@@ -158,26 +159,61 @@ button:active{
   width: 30%;
   margin: auto;
 }
+}
 
-/****** Special styling for smaller screen*****
-@media screen and (min-width: 480px) {
+/****** Special styling for smaller screen*****/
+@media screen and (max-width: 480px) {
 
+  body{
+    background-color: #feebcb;
+    margin: auto;
+  }
+  /****Header*******/
   header{
     background-image: url("tiles.jpeg");
     background-repeat: repeat;
-    /*padding: 0.5% 0%;
+    padding: 0.1% 0%;
     text-align: center;
-    /*letter-spacing: 0.1em;
+    /*letter-spacing: 0.1em;*/
     font-family: 'Abril Fatface', cursive;
-    font-size: 0.5em;
+    font-size: 1em;
     text-shadow: 1px 1.5px 0px #666;
-    color: #daf3da;
+    color: #FE93D7;
+  }
+
+  h1.nav{
+    margin: 0px;
   }
   h2.nav{
-    font-size: 0.25em;
-    margin: none;
+  font-size: 0.75em;
+  margin: none;
   }
 
-}
-*/
+  nav{
+  background-color: #F1FFCE;
+  width: 100%;
+  margin: auto;
+  }
 
+  a.nav{
+  background-color: #F1FFCE;
+  margin: auto;
+  display: inline-block;
+  padding: 0.1em;
+  color: #feced7;
+  text-decoration: none;
+  }
+  /********Body********/
+  div.sections{
+    display: none;
+  }
+
+  h2#franchise{
+    font-size: 0.75em;
+    width: 80%;
+    font-family: 'Indie Flower', cursive;
+    color: #FE93D7;
+    margin: auto;
+    text-align: center;
+  }
+}

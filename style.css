@@ -137,19 +137,11 @@ fieldset{
   border: none;
 }
 
-/*legend{
-  font-weight: bold;
-  font-size: 1.05em;
-  font-family: 'Indie Flower', cursive;
-  text-align: center;
-}*/
-
 input{
   width: 98%;
 }
 
 input:focus{
-  max-width: 90%;
   margin: auto;
   background-color: #FFFDD3;
 }
@@ -161,8 +153,10 @@ button:active{
 }
 }
 
-/****** Special styling for smaller screen*****/
-@media screen and (max-width: 480px) {
+/********************** Special styling for smaller screen*****/
+/***************************************************************/
+
+@media screen and (max-width: 550px) {
 
   body{
     background-color: #feebcb;
@@ -178,30 +172,30 @@ button:active{
     font-family: 'Abril Fatface', cursive;
     font-size: 1em;
     text-shadow: 1px 1.5px 0px #666;
-    color: #FE93D7;
+    color: #daf3da;
   }
 
   h1.nav{
     margin: 0px;
   }
   h2.nav{
-  font-size: 0.75em;
-  margin: none;
+    font-size: 0.75em;
+    margin: none;
   }
 
   nav{
-  background-color: #F1FFCE;
-  width: 100%;
-  margin: auto;
+    background-color: #F1FFCE;
+    width: 100%;
+    margin: auto;
   }
 
   a.nav{
-  background-color: #F1FFCE;
-  margin: auto;
-  display: inline-block;
-  padding: 0.1em;
-  color: #feced7;
-  text-decoration: none;
+    background-color: #F1FFCE;
+    margin: auto;
+    display: inline-block;
+    padding: 0.1em;
+    color: #feced7;
+    text-decoration: none;
   }
   /********Body********/
   div.sections{
@@ -213,7 +207,54 @@ button:active{
     width: 80%;
     font-family: 'Indie Flower', cursive;
     color: #FE93D7;
-    margin: auto;
+    margin: 2em auto 0px auto;
     text-align: center;
+  }
+
+  table{
+    font-size: 0.005em;
+    font-family: "Helvetica", 'san-serif';
+    background-color:#accfcc;
+    margin: 20px auto 20px auto;
+    border-collapse: collapse;
+    border: solid 1px black;
+  }
+
+  tr#hoursHeading{
+    font-family: "Helvetica", 'san-serif';
+    background-color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.005em;
+    border-bottom: solid 1px black;
+  }
+
+  td{
+    border-bottom: solid 1px black;
+    text-align: center;
+  }
+
+  form{
+    width: 50%;
+    margin: auto;
+  }
+
+  fieldset{
+    border: none;
+  }
+
+  input{
+    width: 98%;
+  }
+
+  input:focus{
+    margin: auto;
+    background-color: #FFFDD3;
+  }
+
+  button:active{
+    background-color: #DDD2FF;
+    width: 30%;
+    margin: auto;
   }
 }

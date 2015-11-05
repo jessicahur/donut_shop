@@ -1,4 +1,4 @@
-@media (min-width: 550px){
+
 body{
   background-color: #feebcb;
   margin: auto;
@@ -6,6 +6,9 @@ body{
 
 /************* Header styling*************/
 header{
+  position: fixed;
+  top: 0px;
+  width: 100%;
   background-image: url("600x398.jpg");
   background-repeat: repeat;
   padding: 0.5% 0%;
@@ -57,6 +60,7 @@ div.sections{
 }
 
 div#intro{
+  margin-top: 300px;
   background-color: #DDEFC8;
 }
 
@@ -92,7 +96,6 @@ h2#franchise{
   width: 950px;
   font-family: 'Indie Flower', cursive;
   color: #FE93D7;
-  width: 60%;
   margin: auto;
   text-align: center;
 }
@@ -151,6 +154,13 @@ button:active{
   width: 30%;
   margin: auto;
 }
+
+a.BackToTop{
+  position: absolute;
+  left: 40%;
+  text-decoration: none;
+  font-family: 'Indie Flower', cursive;
+  color: Brown;
 }
 
 /********************** Special styling for smaller screen*****/

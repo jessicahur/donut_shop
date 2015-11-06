@@ -5,8 +5,6 @@ body{
 
 /************* Header styling*************/
 header{
-  /*position: fixed;
-  top: 0px; */
   width: 100%;
   background-image: url("600x398.jpg");
   background-repeat: repeat;
@@ -31,7 +29,7 @@ a.nav{
   background-color: #F1FFCE;
   margin: auto;
   display: inline-block;
-  padding: 0.25em;
+  padding: 5px 10px;
   color: #feced7;
   text-decoration: none;
 }
@@ -41,17 +39,29 @@ a.nav:hover{
 }
 
 
-/************* Body Styling*********/
+/********************* Body Styling**********************/
 
-/********Animation******/
+/*=================Truck Animation==============*/
 
-img#truck {
+div.truck {
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    color: #FE93D7;
     position:absolute;
+    top: 200px;
     background-color: none;
-    -webkit-animation-name: running; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 5s; /* Chrome, Safari, Opera */
-    animation-name: running;
-    animation-duration: 5s;
+    -webkit-animation: running 10s infinite linear; /* Chrome, Safari, Opera */
+    animation-name: running 10s infinite linear;
+}
+
+p#deliver{
+  left: 8px;
+}
+
+div.truck:hover{
+  -webkit-animation-play-state: paused; /* Chrome, Safari, Opera */
+  animation-play-state: paused;
 }
 
 /* Chrome, Safari, Opera */
@@ -65,7 +75,9 @@ img#truck {
     0%   {left: 0%;}
     100%  {left: 100%;}
 }
-/***********************/
+/*==============End of Truck Animation======*/
+
+
 
 
 div.sections{
@@ -76,8 +88,14 @@ div.sections{
   border-radius: 10px;
 }
 
+div.sections:hover{
+  -webkit-tranform: scale (1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 div#intro{
-  /*margin-top: 350px;*/
+  margin-top: 150px;
   background-color: #DDEFC8;
 }
 
@@ -91,7 +109,6 @@ div#wedding{
 
 img{
   float: left;
-  margin: auto;
   padding: 1em;
 }
 
@@ -180,8 +197,8 @@ a.BackToTop{
   color: Brown;
 }
 
-/********************** Special styling for smaller screen*****/
-/***************************************************************/
+/**************** Special styling for smaller screen***************/
+/*===============================================================*/
 
 @media screen and (max-width: 750px) {
 
@@ -217,15 +234,16 @@ a.BackToTop{
   }
 
   a.nav{
+    font-size: 0.08em;
     background-color: #F1FFCE;
     margin: auto;
     display: inline-block;
-    padding: 0.1em;
+    padding: 0.5em;
     color: #feced7;
     text-decoration: none;
   }
   /********Body********/
-  img#truck{
+  div.truck{
     display: none;
   }
   div.sections{
@@ -237,7 +255,7 @@ a.BackToTop{
     width: 80%;
     font-family: 'Indie Flower', cursive;
     color: #FE93D7;
-    margin: 2em auto 0px auto;
+    margin: 50px auto 0px auto;
     text-align: center;
   }
 
@@ -245,7 +263,7 @@ a.BackToTop{
     font-size: 0.005em;
     font-family: "Helvetica", 'san-serif';
     background-color:#accfcc;
-    margin: 100px auto 20px auto;
+    margin: 50px auto 20px auto;
     border-collapse: collapse;
     border: solid 1px black;
   }
@@ -286,5 +304,9 @@ a.BackToTop{
     background-color: #DDD2FF;
     width: 30%;
     margin: auto;
+  }
+
+  a.BackToTop{
+    display: none;
   }
 }
